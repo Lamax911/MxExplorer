@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MxExplorer — International digital agency basedd in France</title>
+<meta name="description" content="Independent web agency based in France, working with businesses worldwide: premium websites, booking systems, SEO and maintenance.">
+<meta property="og:title" content="MxExplorer — Beyond Digital">
+<meta property="og:description" content="Digital experiences designed to elevate brands, connect people and turn ideas into reality.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07070a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧭%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#07070a;--tx:#f4f4f7;--mu:#a3a3b0;--ln:rgba(255,255,255,.12);--ac:#b4acff;--g:clamp(20px,5vw,56px);--f:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.6 var(--f);overflow-x:clip;max-width:100%}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+h1,h2,h3{font-weight:500;line-height:1.05;letter-spacing:-.02em;overflow-wrap:break-word}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.w{width:min(1200px,calc(100% - 2*var(--g)));margin-inline:auto;position:relative;z-index:1}
+section{padding:clamp(72px,12vw,150px) 0;position:relative}
+.h2{font-size:clamp(2rem,5.6vw,4rem)}
+.sub{color:var(--mu);font-size:clamp(1rem,1.6vw,1.2rem);max-width:34em;margin-top:16px}
+.gl{display:none;position:fixed;left:0;top:0;width:640px;height:640px;margin:-320px 0 0 -320px;border-radius:50%;background:radial-gradient(circle,rgba(150,135,255,.13),transparent 62%);pointer-events:none;z-index:0;transform:translate(-999px,-999px)}
+@media(hover:hover) and (pointer:fine){.gl{display:block}}
+/* header */
+.hd{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,backdrop-filter .3s}
+.hd.sc,.hd.open{background:rgba(7,7,10,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;width:min(1200px,calc(100% - 2*var(--g)));margin-inline:auto}
+.logo{font-weight:600;letter-spacing:-.02em;text-decoration:none;font-size:1.15rem}
+.dn{display:none;gap:32px}
+.dn a,.mm a{text-decoration:none;color:var(--mu);transition:color .2s}
+.dn a:hover,.mm a:hover{color:var(--tx)}
+.rt{display:flex;align-items:center;gap:8px;position:relative}
+.lb,.bg{min-height:44px;background:none;border:1px solid var(--ln);color:var(--tx);border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer;padding:0 14px;display:inline-flex;align-items:center;gap:6px}
+.bg{width:44px;padding:0;justify-content:center;flex-direction:column;gap:5px}
+.bg i{display:block;width:18px;height:1.5px;background:var(--tx);transition:transform .25s,opacity .2s}
+.open .bg i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.open .bg i:nth-child(2){opacity:0}
+.open .bg i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.ll{position:absolute;right:52px;top:calc(100% + 8px);min-width:170px;list-style:none;margin:0;padding:6px;background:#121217;border:1px solid var(--ln);border-radius:12px;z-index:5}
+.ll[hidden]{display:none}
+.ll button{width:100%;min-height:44px;text-align:left;background:none;border:0;color:var(--tx);font:inherit;padding:0 12px;border-radius:8px;cursor:pointer}
+.ll button:hover,.ll button[aria-selected=true]{background:rgba(255,255,255,.08)}
+.mm{display:none;padding:8px var(--g) 24px;max-height:calc(100dvh - 64px - env(safe-area-inset-top,0px));overflow:auto}
+.open .mm{display:grid}
+.mm a{font-size:1.5rem;padding:14px 0;border-top:1px solid var(--ln);color:var(--tx)}
+@media(min-width:860px){.dn{display:flex}.bg,.mm,.open .mm{display:none}.ll{right:0}}
+/* buttons */
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:1px solid var(--ln);background:none;color:var(--tx);font:500 1rem var(--f);text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,border-color .25s;text-align:center}
+.bt:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
+.bt.p{background:var(--tx);color:#07070a;border-color:var(--tx)}
+.bt.p:hover{background:#fff;box-shadow:0 8px 30px rgba(180,172,255,.35)}
+.bt:disabled{opacity:.6;cursor:wait}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 110px) 0 56px;overflow:clip}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 60% 40%,#000,transparent 70%);opacity:.5}
+.hv{position:absolute;left:50%;top:60%;width:min(560px,96vw);translate:-50% -50%;opacity:.45;transform:translate(calc(var(--mx,0)*-18px),calc(var(--my,0)*-18px));transition:transform .4s ease-out}
+.hv g{transform-box:view-box;transform-origin:50% 50%;animation:sp 28s linear infinite}
+.hv .r2{animation-duration:38s;animation-direction:reverse}.hv .r3{animation-duration:52s}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(min-width:900px){.hv{left:auto;right:0;translate:0 -50%;opacity:1;width:min(600px,48vw)}}
+.hero h1{font-size:clamp(2.4rem,8.6vw,6.8rem);max-width:11em;animation:up 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero .sub{animation:up 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;animation:up 1.1s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(28px);filter:blur(6px)}}
+.sd{margin-top:56px;display:flex;align-items:center;gap:12px;color:var(--mu);font-size:.85rem}
+.sd i{width:1px;height:44px;background:linear-gradient(var(--tx),transparent);transform-origin:top;animation:ln 2s ease-in-out infinite}
+@keyframes ln{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+/* services */
+.sl{margin-top:clamp(36px,6vw,72px)}
+.sv{display:grid;gap:10px 48px;padding:28px 0;border-top:1px solid var(--ln);position:relative;isolation:isolate}
+.sv::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(180,172,255,.1),transparent);opacity:0;transition:opacity .8s ease}
+.js .sv.rv{transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1),padding .8s cubic-bezier(.2,.7,.2,1)}
+.sv:last-child{border-bottom:1px solid var(--ln)}
+.sv h3{font-size:clamp(1.4rem,3.2vw,2.3rem)}
+.sv p{color:var(--mu);max-width:36em}
+@media(min-width:800px){.sv{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+@media(hover:hover){.sv:hover{padding-left:20px}.sv:hover::before{opacity:1}}
+/* work */
+.pj{display:grid;gap:28px 64px;margin-top:clamp(40px,7vw,90px);align-items:center}
+@media(min-width:900px){.pj{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.pj.rev .mk{order:2}}
+.mk{position:relative;aspect-ratio:16/11;perspective:1000px;--rx:0deg;--ry:0deg}
+.mk>div{position:absolute;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;transform-style:preserve-3d}
+.br{left:0;top:0;width:88%;height:90%;border-radius:10px;border:1px solid var(--ln);overflow:hidden;display:flex;flex-direction:column;background:#0d0d11;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.bar{height:26px;flex:none;display:flex;align-items:center;gap:5px;padding:0 10px;background:#17171d;font-size:.62rem;color:var(--mu)}
+.bar b{width:7px;height:7px;border-radius:50%;background:#3a3a44}
+.bar span{margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scr{flex:1;position:relative;overflow:hidden;padding:7% 8%}
+.scr i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.85);margin:7px 0}
+.scr i.t{height:12px;width:55%}.scr i.d{opacity:.4}
+.scr u{position:absolute;display:block}
+.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:1}
+.ph .shot{object-position:25% top}
+.ph{right:1%;bottom:0;width:29%;aspect-ratio:9/18;border-radius:14px;border:3px solid #2b2b33;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6);translate:0 0;transform:rotateX(var(--rx)) rotateY(var(--ry)) translateZ(40px)}
+.ph .scr{height:100%;padding:12% 10%}
+.a1{background:linear-gradient(135deg,#0e1b2e,#1f4170)}
+.a1 u{left:8%;right:8%;bottom:8%;height:26%;border-radius:8px;background:linear-gradient(90deg,#f2b441 0 34%,transparent 34% 36%,rgba(255,255,255,.18) 36% 68%,transparent 68% 70%,rgba(255,255,255,.18) 70%)}
+.ph .a1 u{height:18%}
+.a2{background:linear-gradient(160deg,#0e2517,#33703f)}
+.a2 u{right:-8%;bottom:-18%;width:60%;aspect-ratio:1;border-radius:0 100% 0 100%;background:rgba(214,235,190,.28)}
+.a2 i{background:#eef3dc}
+.pj h3{font-size:clamp(1.7rem,3.6vw,2.6rem);margin:6px 0 14px}
+.pj .cat{color:var(--ac);font-size:.95rem}
+.pj p{color:var(--mu);margin-bottom:26px}
+/* about / why / process */
+.ab .h2{font-size:clamp(2.2rem,7vw,5.5rem)}
+.ab .cols{display:grid;gap:20px 64px;margin-top:40px;color:var(--mu);font-size:clamp(1rem,1.5vw,1.15rem)}
+@media(min-width:800px){.ab .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.ab::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(130,120,255,.12),transparent)}
+.wl{display:grid;gap:0 64px;margin-top:clamp(36px,6vw,72px)}
+.wl div{border-top:1px solid var(--ln);padding:26px 0 30px}
+.wl h3{font-size:clamp(1.3rem,2.4vw,1.8rem);margin-bottom:10px}
+.wl p{color:var(--mu);max-width:30em}
+@media(min-width:800px){.wl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tl{list-style:none;padding:0;margin:clamp(36px,6vw,72px) 0 0;display:grid;gap:30px;counter-reset:s}
+.tl li{position:relative;padding-left:60px}
+.tl li::before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;width:42px;height:42px;border:1px solid var(--ln);border-radius:50%;display:grid;place-items:center;font-size:.8rem;background:var(--bg);z-index:1;color:var(--ac)}
+.tl li::after{content:"";position:absolute;left:21px;top:42px;bottom:-30px;width:1px;background:var(--ln)}
+.tl li:last-child::after{display:none}
+.tl h3{font-size:1.4rem;margin-bottom:6px}
+.tl p{color:var(--mu)}
+@media(min-width:1000px){.tl{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}.tl li{padding:68px 0 0}.tl li::after{left:42px;right:-24px;top:21px;bottom:auto;width:auto;height:1px}}
+/* contact */
+.ct{display:grid;gap:40px 72px}
+@media(min-width:900px){.ct{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:start}}
+.cl{display:grid;gap:12px;margin-top:32px;justify-items:start}
+.cl a.m{color:var(--mu);overflow-wrap:anywhere;min-height:44px;display:inline-flex;align-items:center}
+.fm{display:grid;gap:18px;min-width:0}
+.r{display:grid;gap:18px}
+@media(min-width:600px){.r{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fd{display:grid;gap:8px;min-width:0}
+.fd label{font-size:.9rem;color:var(--mu)}
+.fd input,.fd select,.fd textarea{width:100%;max-width:100%;min-height:50px;padding:12px 14px;background:#101015;border:1px solid var(--ln);border-radius:8px;color:var(--tx);font:inherit;font-size:16px}
+.fd textarea{min-height:140px;resize:vertical}
+.fd input:focus,.fd select:focus,.fd textarea:focus{border-color:var(--ac);outline:none;box-shadow:0 0 0 3px rgba(180,172,255,.2)}
+.fd [aria-invalid=true]{border-color:#ff8a8a}
+.er{color:#ff9d9d;font-size:.85rem;min-height:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.st{min-height:1.5em;font-size:.95rem}.st.ok{color:#8be0a4}.st.no{color:#ff9d9d}
+/* footer */
+footer{border-top:1px solid var(--ln);padding:56px 0 calc(100px + env(safe-area-inset-bottom,0px));position:relative;z-index:1}
+.fg{display:grid;gap:36px 48px}
+@media(min-width:800px){.fg{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{margin:0 0 10px;font-weight:500;color:var(--mu);font-size:.9rem}
+footer ul{list-style:none;padding:0;margin:0}
+footer li a,footer li button{display:inline-flex;align-items:center;min-height:40px;color:var(--tx);text-decoration:none;background:none;border:0;font:inherit;padding:0;cursor:pointer;overflow-wrap:anywhere}
+.cp{margin-top:40px;color:var(--mu);font-size:.85rem}
+/* whatsapp */
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#121a16;border:1px solid rgba(110,230,160,.45);color:#6ee6a0;z-index:40;transition:transform .25s,box-shadow .25s}
+.wa:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 30px rgba(110,230,160,.25)}
+@media(max-width:700px){.hv .r3{display:none}.sd{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="gl" id="gl" aria-hidden="true"></div>
+<header class="hd" id="hd">
+ <div class="hb">
+  <a class="logo" href="#home">MxExplorer</a>
+  <nav class="dn" aria-label="Main"><a href="#home" data-t="n1">Home</a><a href="#services" data-t="n2">Services</a><a href="#projects" data-t="n3">Projects</a><a href="#about" data-t="n4">About</a><a href="#contact" data-t="n5">Contact</a></nav>
+  <div class="rt">
+   <button class="lb" id="lb" aria-haspopup="true" aria-expanded="false" aria-controls="ll"><span id="lc">🇬🇧 EN</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+   <ul class="ll" id="ll" hidden>
+    <li><button data-l="en">🇬🇧 English</button></li><li><button data-l="fr">🇫🇷 Français</button></li><li><button data-l="es">🇪🇸 Español</button></li>
+   </ul>
+   <button class="bg" id="bg" aria-expanded="false" aria-controls="mm" data-a="menu"><i></i><i></i><i></i></button>
+  </div>
+ </div>
+ <nav class="mm" id="mm" aria-label="Mobile"><a href="#home" data-t="n1">Home</a><a href="#services" data-t="n2">Services</a><a href="#projects" data-t="n3">Projects</a><a href="#about" data-t="n4">About</a><a href="#contact" data-t="n5">Contact</a></nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <svg class="hv" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4beff"/><stop offset="1" stop-color="#7aa7ff" stop-opacity=".15"/></linearGradient><radialGradient id="g2"><stop offset="0" stop-color="#b4acff" stop-opacity=".5"/><stop offset="1" stop-color="#b4acff" stop-opacity="0"/></radialGradient></defs>
+ <circle cx="200" cy="200" r="130" fill="url(#g2)"/>
+ <g class="r1"><ellipse cx="200" cy="200" rx="180" ry="62" fill="none" stroke="url(#g1)" stroke-width="1.2"/><circle cx="380" cy="200" r="4" fill="#fff"/></g>
+ <g class="r2"><ellipse cx="200" cy="200" rx="180" ry="62" fill="none" stroke="url(#g1)" stroke-width="1.2" transform="rotate(60 200 200)"/><circle cx="110" cy="44" r="3.5" fill="#c4beff"/></g>
+ <g class="r3"><ellipse cx="200" cy="200" rx="180" ry="62" fill="none" stroke="url(#g1)" stroke-width="1.2" transform="rotate(-60 200 200)"/><circle cx="110" cy="356" r="3.5" fill="#7aa7ff"/></g>
+ <circle cx="200" cy="200" r="22" fill="#fff" opacity=".92"/></svg>
+ <div class="w">
+  <h1 data-t="h1">Beyond Digital.<br>We build what’s next.</h1>
+  <p class="sub" data-t="hs">Digital experiences designed to elevate brands, connect people and turn ideas into reality.</p>
+  <div class="cta"><a class="bt p" href="#contact" data-t="c1">Start a project</a><a class="bt" href="#projects" data-t="c2">Explore our work</a></div>
+  <div class="sd"><i></i><span data-t="sc">Scroll</span></div>
+ </div>
+</section>
+
+<section id="services"><div class="w">
+ <h2 class="h2 rv" data-t="st">What we do</h2>
+ <p class="sub rv" data-t="ss">Thoughtfully designed digital experiences. Built to perform.</p>
+ <div class="sl">
+  <article class="sv rv"><h3 data-t="s1t">Website Design &amp; Development</h3><p data-t="s1d">Modern, custom-built websites designed to reflect your brand, deliver an exceptional experience and turn visitors into customers.</p></article>
+  <article class="sv rv"><h3 data-t="s2t">Booking &amp; Appointment Systems</h3><p data-t="s2d">Seamless booking experiences that make it easy for your customers to schedule appointments and interact with your business.</p></article>
+  <article class="sv rv"><h3 data-t="s3t">SEO &amp; Visibility</h3><p data-t="s3d">Improve your digital visibility with a website designed around performance, search engine optimization and user experience.</p></article>
+  <article class="sv rv"><h3 data-t="s4t">Website Maintenance &amp; Support</h3><p data-t="s4d">Reliable ongoing support, updates and improvements to keep your website secure, efficient and evolving.</p></article>
+ </div>
+</div></section>
+
+<section id="projects"><div class="w">
+ <h2 class="h2 rv" data-t="wt">Selected projects</h2>
+ <!-- Edit project URLs here: the two "Visit website" links below -->
+ <article class="pj rv">
+  <div class="mk" role="img" aria-label="SLC Location website mockup on desktop and mobile">
+   <div class="br"><div class="bar"><b></b><b></b><b></b><span>slc-location.fr</span></div><div class="scr a1"><i class="t"></i><i class="d" style="width:70%"></i><i class="d" style="width:45%"></i><u></u><img class="shot" src="https://i.imgur.com/I0h5ytZ.png" alt="Screenshot of the SLC Location website" loading="lazy" onerror="this.remove()"></div></div>
+   <div class="ph"><div class="scr a1"><i class="t" style="width:70%"></i><i class="d"></i><i class="d" style="width:60%"></i><u></u><img class="shot" src="https://i.imgur.com/sc2W7ak.png" alt="Mobile screenshot of the SLC Location website" loading="lazy" onerror="this.remove()"></div></div>
+  </div>
+  <div><span class="cat" data-t="p1c">Vehicle &amp; equipment rental</span><h3>SLC Location</h3><p data-t="p1d">A website for a vehicle and equipment rental business, designed to make the offer clear and enquiries easy.</p><a class="bt" href="https://slc-location.fr" target="_blank" rel="noopener noreferrer" data-t="vs">Visit website</a></div>
+ </article>
+ <article class="pj rev rv">
+  <div class="mk" role="img" aria-label="Gérard Nature Services website mockup on desktop and mobile">
+   <div class="br"><div class="bar"><b></b><b></b><b></b><span>gerardnatureservices.fr</span></div><div class="scr a2"><i class="t"></i><i class="d" style="width:65%"></i><i class="d" style="width:40%"></i><u></u></div></div>
+   <div class="ph"><div class="scr a2"><i class="t" style="width:70%"></i><i class="d"></i><i class="d" style="width:55%"></i><u></u></div></div>
+  </div>
+  <div><span class="cat" data-t="p2c">Landscaping &amp; nature services</span><h3>Gérard Nature Services</h3><p data-t="p2d">A professional website for landscaping and nature services, with a calm visual identity rooted in the outdoors.</p><a class="bt" href="https://gerardnatureservices.fr" target="_blank" rel="noopener noreferrer" data-t="vs">Visit website</a></div>
+ </article>
+</div></section>
+
+<section class="ab" id="about"><div class="w">
+ <h2 class="h2 rv" data-t="ah">Built in France.<br>Designed for the world.</h2>
+ <div class="cols rv"><p data-t="a1">Based in France, MxExplorer is an independent digital agency working with businesses and entrepreneurs across borders.</p><p data-t="a2">We combine thoughtful design, modern technology and a strong focus on user experience to create digital experiences that help businesses stand out and grow.</p></div>
+</div></section>
+
+<section><div class="w">
+ <h2 class="h2 rv" data-t="wh">More than a website.</h2>
+ <div class="wl">
+  <div class="rv"><h3 data-t="w1t">Designed with intention</h3><p data-t="w1d">Every detail matters. We create digital experiences that are carefully designed around your brand and your goals.</p></div>
+  <div class="rv"><h3 data-t="w2t">Built for your business</h3><p data-t="w2d">Your website should work for you. We focus on clear user journeys, performance and meaningful interactions.</p></div>
+  <div class="rv"><h3 data-t="w3t">Connected worldwide</h3><p data-t="w3d">Based in France, we collaborate with businesses and entrepreneurs around the world.</p></div>
+  <div class="rv"><h3 data-t="w4t">Built to evolve</h3><p data-t="w4d">Digital experiences should never stand still. We help your business evolve through ongoing improvements and support.</p></div>
+ </div>
+</div></section>
+
+<section><div class="w">
+ <h2 class="h2 rv" data-t="ph">From idea to experience.</h2>
+ <ol class="tl">
+  <li class="rv"><h3 data-t="q1t">Discover</h3><p data-t="q1d">We understand your business, your goals and your audience.</p></li>
+  <li class="rv"><h3 data-t="q2t">Design</h3><p data-t="q2d">We shape your ideas into a distinctive digital experience.</p></li>
+  <li class="rv"><h3 data-t="q3t">Build</h3><p data-t="q3d">We transform the design into a fast, responsive and functional website.</p></li>
+  <li class="rv"><h3 data-t="q4t">Launch</h3><p data-t="q4d">We launch your website and make sure everything is ready.</p></li>
+  <li class="rv"><h3 data-t="q5t">Evolve</h3><p data-t="q5d">We stay available for maintenance, support and future improvements.</p></li>
+ </ol>
+</div></section>
+
+<section id="contact"><div class="w ct">
+ <div class="rv">
+  <h2 class="h2" data-t="kh">Let’s create something remarkable.</h2>
+  <p class="sub" data-t="ks">Have a project in mind? Tell us about it.</p>
+  <div class="cl">
+   <a class="bt" href="https://wa.me/33603764762" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.2-1.3-2-1-.8.7a4 4 0 0 1-2-2l.7-.8-1-2L9 8.5z"/></svg><span data-t="wa">Chat on WhatsApp</span></a>
+   <a class="m" href="mailto:mxexplorer.contact@gmail.com">mxexplorer.contact@gmail.com</a>
+  </div>
+ </div>
+ <form class="fm rv" id="fm" novalidate action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+  <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="r">
+   <div class="fd"><label for="f-name" data-t="fn">Full name</label><input id="f-name" name="name" autocomplete="name" data-r aria-describedby="e-name"><div class="er" id="e-name" aria-live="polite"></div></div>
+   <div class="fd"><label for="f-email" data-t="fe">Email</label><input id="f-email" name="email" type="email" autocomplete="email" data-r aria-describedby="e-email"><div class="er" id="e-email" aria-live="polite"></div></div>
+  </div>
+  <div class="fd"><label for="f-co" data-t="fc">Company name (optional)</label><input id="f-co" name="company" autocomplete="organization"></div>
+  <div class="r">
+   <div class="fd"><label for="f-type" data-t="ft">Project type</label><select id="f-type" name="type" data-r aria-describedby="e-type"><option value="" data-t="sel">Select…</option><option value="Website design" data-t="t1">Website design</option><option value="Website redesign" data-t="t2">Website redesign</option><option value="Booking system" data-t="t3">Booking system</option><option value="SEO" data-t="t4">SEO</option><option value="Maintenance" data-t="t5">Maintenance</option><option value="Other" data-t="t6">Other</option></select><div class="er" id="e-type" aria-live="polite"></div></div>
+   <div class="fd"><label for="f-bud" data-t="fb">Estimated budget (optional)</label><select id="f-bud" name="budget"><option value="" data-t="sel">Select…</option><option value="Under $1,000" data-t="b1">Under $1,000</option><option value="$1,000–$2,500" data-t="b2">$1,000–$2,500</option><option value="$2,500–$5,000" data-t="b3">$2,500–$5,000</option><option value="$5,000+" data-t="b4">$5,000+</option><option value="Not sure yet" data-t="b5">Not sure yet</option></select></div>
+  </div>
+  <div class="fd"><label for="f-msg" data-t="fm">Message</label><textarea id="f-msg" name="message" data-r aria-describedby="e-message"></textarea><div class="er" id="e-message" aria-live="polite"></div></div>
+  <button class="bt p" type="submit" data-t="fs">Send message</button>
+  <div class="st" id="st" role="status" aria-live="polite"></div>
+  <div hidden><span data-t="m_req">This field is required.</span><span data-t="m_bad">Enter a valid email address.</span><span data-t="m_send">Sending…</span><span data-t="m_ok">Thank you! Your message has been sent. We’ll reply shortly.</span><span data-t="m_err">Something went wrong. Please try again or write to us by email or WhatsApp.</span><span data-t="menu">Menu</span></div>
+ </form>
+</div></section>
+</main>
+
+<footer><div class="w">
+ <div class="fg">
+  <div><a class="logo" href="#home">MxExplorer</a><p class="sub" style="font-size:1rem" data-t="ftag">Independent digital agency based in France, working worldwide.</p></div>
+  <div><h4 data-t="fnav">Navigate</h4><ul><li><a href="#home" data-t="n1">Home</a></li><li><a href="#services" data-t="n2">Services</a></li><li><a href="#projects" data-t="n3">Projects</a></li><li><a href="#about" data-t="n4">About</a></li><li><a href="#contact" data-t="n5">Contact</a></li></ul></div>
+  <div><h4 data-t="fct">Contact</h4><ul><li><a href="mailto:mxexplorer.contact@gmail.com">mxexplorer.contact@gmail.com</a></li><li><a href="https://wa.me/33603764762" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><span data-t="loc">France</span></li><li><button data-fl="en">🇬🇧 EN</button>&nbsp;<button data-fl="fr">🇫🇷 FR</button>&nbsp;<button data-fl="es">🇪🇸 ES</button></li></ul></div>
+ </div>
+ <p class="cp">© <span id="yr"></span> MxExplorer. <span data-t="rt">All rights reserved.</span></p>
+</div></footer>
+
+<a class="wa" href="https://wa.me/33603764762" target="_blank" rel="noopener noreferrer" data-a="wa" aria-label="Chat on WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.2-1.3-2-1-.8.7a4 4 0 0 1-2-2l.7-.8-1-2L9 8.5z"/></svg></a>
+
+<script>
+const CFG={formspree:'YOUR_FORMSPREE_ID'}; // replace with your Formspree form ID
+// Translations: key -> [French, Spanish]. English lives in the HTML.
+const T={
+title:["MxExplorer — Agence digitale internationale basée en France","MxExplorer — Agencia digital internacional con sede en Francia"],
+desc:["Agence web indépendante basée en France, au service d’entreprises du monde entier : sites premium, réservation en ligne, SEO et maintenance.","Agencia web independiente con sede en Francia que trabaja con empresas de todo el mundo: sitios premium, reservas online, SEO y mantenimiento."],
+n1:["Accueil","Inicio"],n2:["Services","Servicios"],n3:["Projets","Proyectos"],n4:["À propos","Acerca de"],n5:["Contact","Contacto"],
+h1:["Au-delà du digital.<br>Nous construisons la suite.","Más allá de lo digital.<br>Construimos lo que viene."],
+hs:["Des expériences digitales conçues pour valoriser les marques, connecter les gens et donner vie aux idées.","Experiencias digitales diseñadas para elevar marcas, conectar personas y hacer realidad las ideas."],
+c1:["Démarrer un projet","Iniciar un proyecto"],c2:["Découvrir nos projets","Explorar nuestro trabajo"],sc:["Défiler","Desplazar"],
+st:["Ce que nous faisons","Lo que hacemos"],ss:["Des expériences digitales pensées avec soin. Conçues pour performer.","Experiencias digitales cuidadosamente diseñadas. Creadas para rendir."],
+s1t:["Conception et développement de sites web","Diseño y desarrollo web"],s1d:["Des sites sur mesure et modernes, conçus pour refléter votre marque, offrir une expérience exceptionnelle et transformer les visiteurs en clients.","Sitios web modernos y a medida, diseñados para reflejar su marca, ofrecer una experiencia excepcional y convertir visitantes en clientes."],
+s2t:["Réservation et prise de rendez-vous","Sistemas de reservas y citas"],s2d:["Des parcours de réservation fluides qui permettent à vos clients de prendre rendez-vous et d’interagir facilement avec votre entreprise.","Experiencias de reserva fluidas que facilitan a sus clientes agendar citas e interactuar con su negocio."],
+s3t:["SEO et visibilité","SEO y visibilidad"],s3d:["Améliorez votre visibilité grâce à un site pensé pour la performance, le référencement et l’expérience utilisateur.","Mejore su visibilidad con un sitio diseñado en torno al rendimiento, el posicionamiento en buscadores y la experiencia de usuario."],
+s4t:["Maintenance et support du site","Mantenimiento y soporte web"],s4d:["Un support fiable, des mises à jour et des améliorations continues pour garder votre site sûr, efficace et en évolution.","Soporte continuo, actualizaciones y mejoras para mantener su sitio seguro, eficiente y en evolución."],
+wt:["Projets sélectionnés","Proyectos seleccionados"],
+p1c:["Location de véhicules et de matériel","Alquiler de vehículos y equipos"],p1d:["Un site pour une entreprise de location de véhicules et de matériel, pensé pour présenter l’offre clairement et faciliter les demandes.","Un sitio para una empresa de alquiler de vehículos y equipos, pensado para presentar la oferta con claridad y facilitar las consultas."],
+p2c:["Paysagisme et services de la nature","Paisajismo y servicios de naturaleza"],p2d:["Un site professionnel pour des services de paysagisme et de nature, avec une identité apaisante inspirée du plein air.","Un sitio profesional de paisajismo y servicios de naturaleza, con una identidad serena inspirada en el aire libre."],
+vs:["Visiter le site","Visitar el sitio"],
+ah:["Conçu en France.<br>Pensé pour le monde.","Hecho en Francia.<br>Diseñado para el mundo."],
+a1:["Basée en France, MxExplorer est une agence digitale indépendante qui accompagne des entreprises et des entrepreneurs au-delà des frontières.","Con sede en Francia, MxExplorer es una agencia digital independiente que trabaja con empresas y emprendedores de todo el mundo."],
+a2:["Nous associons design soigné, technologies modernes et attention portée à l’expérience utilisateur pour créer des expériences digitales qui aident les entreprises à se démarquer et à grandir.","Combinamos diseño cuidado, tecnología moderna y un fuerte enfoque en la experiencia de usuario para crear experiencias digitales que ayudan a las empresas a destacar y crecer."],
+wh:["Bien plus qu’un site web.","Más que un sitio web."],
+w1t:["Conçu avec intention","Diseñado con intención"],w1d:["Chaque détail compte. Nous créons des expériences digitales construites autour de votre marque et de vos objectifs.","Cada detalle importa. Creamos experiencias digitales diseñadas en torno a su marca y a sus objetivos."],
+w2t:["Pensé pour votre activité","Hecho para su negocio"],w2d:["Votre site doit travailler pour vous. Nous privilégions des parcours clairs, la performance et des interactions utiles.","Su sitio debe trabajar para usted. Nos centramos en recorridos claros, rendimiento e interacciones con sentido."],
+w3t:["Connecté au monde","Conectados con el mundo"],w3d:["Basés en France, nous collaborons avec des entreprises et des entrepreneurs du monde entier.","Con sede en Francia, colaboramos con empresas y emprendedores de todo el mundo."],
+w4t:["Conçu pour évoluer","Hecho para evolucionar"],w4d:["Les expériences digitales ne doivent jamais rester figées. Nous aidons votre entreprise à évoluer grâce à des améliorations et un suivi continus.","Las experiencias digitales nunca deben quedarse quietas. Ayudamos a su negocio a evolucionar con mejoras y soporte continuos."],
+ph:["De l’idée à l’expérience.","De la idea a la experiencia."],
+q1t:["Découvrir","Descubrir"],q1d:["Nous comprenons votre activité, vos objectifs et votre public.","Entendemos su negocio, sus objetivos y su público."],
+q2t:["Concevoir","Diseñar"],q2d:["Nous donnons forme à vos idées dans une expérience digitale singulière.","Damos forma a sus ideas en una experiencia digital distintiva."],
+q3t:["Construire","Construir"],q3d:["Nous transformons le design en un site rapide, responsive et fonctionnel.","Convertimos el diseño en un sitio rápido, adaptable y funcional."],
+q4t:["Lancer","Lanzar"],q4d:["Nous mettons votre site en ligne et vérifions que tout est prêt.","Lanzamos su sitio y nos aseguramos de que todo esté listo."],
+q5t:["Évoluer","Evolucionar"],q5d:["Nous restons disponibles pour la maintenance, le support et les améliorations futures.","Seguimos disponibles para mantenimiento, soporte y futuras mejoras."],
+kh:["Créons quelque chose de remarquable.","Creemos algo extraordinario."],ks:["Un projet en tête ? Parlez-nous-en.","¿Tiene un proyecto en mente? Cuéntenoslo."],
+wa:["Discuter sur WhatsApp","Chatear por WhatsApp"],
+fn:["Nom complet","Nombre completo"],fe:["E-mail","Correo electrónico"],fc:["Entreprise (facultatif)","Empresa (opcional)"],ft:["Type de projet","Tipo de proyecto"],fb:["Budget estimé (facultatif)","Presupuesto estimado (opcional)"],fm:["Message","Mensaje"],fs:["Envoyer le message","Enviar mensaje"],sel:["Choisir…","Seleccionar…"],
+t1:["Création de site web","Diseño web"],t2:["Refonte de site web","Rediseño web"],t3:["Système de réservation","Sistema de reservas"],t4:["SEO","SEO"],t5:["Maintenance","Mantenimiento"],t6:["Autre","Otro"],
+b1:["Moins de 1 000 $","Menos de $1,000"],b2:["1 000 $ – 2 500 $","$1,000–$2,500"],b3:["2 500 $ – 5 000 $","$2,500–$5,000"],b4:["Plus de 5 000 $","Más de $5,000"],b5:["Pas encore sûr","Aún no lo sé"],
+m_req:["Ce champ est obligatoire.","Este campo es obligatorio."],m_bad:["Saisissez une adresse e-mail valide.","Introduzca un correo electrónico válido."],m_send:["Envoi en cours…","Enviando…"],
+m_ok:["Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.","¡Gracias! Su mensaje ha sido enviado. Le responderemos pronto."],
+m_err:["Une erreur est survenue. Réessayez ou écrivez-nous par e-mail ou WhatsApp.","Algo salió mal. Inténtelo de nuevo o escríbanos por correo o WhatsApp."],menu:["Menu","Menú"],
+ftag:["Agence digitale indépendante basée en France, active dans le monde entier.","Agencia digital independiente con sede en Francia, que trabaja en todo el mundo."],
+fnav:["Navigation","Navegación"],fct:["Contact","Contacto"],loc:["France","Francia"],rt:["Tous droits réservés.","Todos los derechos reservados."]};
+
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const LN={en:['🇬🇧','EN'],fr:['🇫🇷','FR'],es:['🇪🇸','ES']};
+$$('[data-t]').forEach(e=>e.dataset.en=e.innerHTML);
+const d0=document.title,m0=$('meta[name=description]').content;
+const t=k=>$('[data-t='+k+']').innerHTML;
+function setLang(l){
+ const i={fr:0,es:1}[l]??-1;
+ $$('[data-t]').forEach(e=>{const v=i<0?undefined:T[e.dataset.t]?.[i];e.innerHTML=v??e.dataset.en});
+ $$('[data-a]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.a)));
+ document.documentElement.lang=l;
+ document.title=i<0?d0:T.title[i];
+ $('meta[name=description]').content=i<0?m0:T.desc[i];
+ $('#lc').textContent=LN[l][0]+' '+LN[l][1];
+ $$('#ll [data-l]').forEach(b=>b.setAttribute('aria-selected',b.dataset.l===l));
+ try{localStorage.setItem('mx-lang',l)}catch(e){}
+}
+let s;try{s=localStorage.getItem('mx-lang')}catch(e){}
+if(!LN[s]){const n=(navigator.language||'').slice(0,2);s=LN[n]?n:'en'}
+setLang(s);
+$('#yr').textContent=new Date().getFullYear();
+
+const lb=$('#lb'),ll=$('#ll');
+const tog=o=>{ll.hidden=!o;lb.setAttribute('aria-expanded',o)};
+lb.onclick=e=>{e.stopPropagation();tog(ll.hidden)};
+ll.onclick=e=>{const b=e.target.closest('[data-l]');if(b){setLang(b.dataset.l);tog(false)}};
+$$('[data-fl]').forEach(b=>b.onclick=()=>setLang(b.dataset.fl));
+document.addEventListener('click',e=>{if(!ll.contains(e.target))tog(false)});
+
+const hd=$('#hd'),bg=$('#bg');
+const menu=o=>{hd.classList.toggle('open',o);bg.setAttribute('aria-expanded',o)};
+bg.onclick=()=>menu(!hd.classList.contains('open'));
+$$('.mm a').forEach(a=>a.onclick=()=>menu(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){tog(false);menu(false)}});
+addEventListener('scroll',()=>hd.classList.toggle('sc',scrollY>20),{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(e=>io.observe(e));
+
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+ const g=$('#gl'),r=document.documentElement.style;
+ addEventListener('pointermove',e=>{g.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;r.setProperty('--mx',e.clientX/innerWidth-.5);r.setProperty('--my',e.clientY/innerHeight-.5)},{passive:true});
+ $$('.mk').forEach(m=>{
+  m.onpointermove=e=>{const b=m.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;m.style.setProperty('--ry',x*10+'deg');m.style.setProperty('--rx',-y*8+'deg')};
+  m.onpointerleave=()=>{m.style.setProperty('--ry','0deg');m.style.setProperty('--rx','0deg')};
+ });
+}
+
+const f=$('#fm'),stt=$('#st');
+f.onsubmit=async e=>{
+ e.preventDefault();let bad=0;
+ $$('[data-r]',f).forEach(i=>{
+  let m='';
+  if(!i.value.trim())m=t('m_req');
+  else if(i.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value.trim()))m=t('m_bad');
+  $('#e-'+i.name).textContent=m;i.setAttribute('aria-invalid',!!m);
+  if(m&&!bad++)i.focus();
+ });
+ if(bad)return;
+ const b=$('button[type=submit]',f);b.disabled=true;stt.className='st';stt.textContent=t('m_send');
+ try{
+  const r=await fetch('https://formspree.io/f/'+CFG.formspree,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
+  if(!r.ok)throw 0;
+  f.reset();stt.className='st ok';stt.textContent=t('m_ok');
+ }catch(x){stt.className='st no';stt.textContent=t('m_err')}
+ b.disabled=false;
+};
+</script>
+</body>
+</html>
